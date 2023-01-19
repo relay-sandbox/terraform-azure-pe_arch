@@ -8,7 +8,7 @@ locals {
 
 resource "azurerm_ssh_public_key" "pe_adm" {
   name                = "pe_adm_${var.id}"
-  public_key          = file(var.ssh_key)
+  public_key          = var.ssh_key
   resource_group_name = var.resource_group.name
   location            = var.region
   tags                = var.tags
